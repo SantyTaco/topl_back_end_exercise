@@ -16,3 +16,16 @@ export function formatGNewsData(gNewsArticles : any[], max: string) {
     const articles = new Articles(parseInt(max), 0, articleList);
     return articles;
 }
+
+export const getWordFrequencyInContent = (articles: Articles) => {
+    const wordFrequency: any = {};
+    articles?.articles?.map((article) => {
+      const words = article.content.split(/['-_",.`~?!&*$%@\s()]/);
+      words?.map((word) => {
+        if (word) {
+          wordFrequency[word] ? wordFrequency[word] = wordFrequency[word] + 1 : wordFrequency[word] = 1;
+        }
+      });
+    });
+    return wordFrequency;
+  }

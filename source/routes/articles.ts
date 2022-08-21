@@ -3,8 +3,8 @@ import ArticlesController from '../controllers/articles';
 
 const router = express.Router();
 
-const newsController = new ArticlesController();
+const articlesController = new ArticlesController();
 
-router.get('/articles/search', newsController.getNewsByKeyWord);
+router.get('/articles/search', articlesController.getNewsByKeyWord);
 
 export = router;
