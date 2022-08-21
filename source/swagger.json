@@ -128,7 +128,7 @@
             "name": "keyword",
             "in": "query",
             "description": "This is the purpose of your search. Articles returned are filtered by the given keywords.",
-            "required": false,
+            "required": true,
             "type": "string",
             "default": ""
           },
