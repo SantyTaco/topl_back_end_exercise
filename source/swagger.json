@@ -1,0 +1,141 @@
+{
+  "components": {
+    "examples": {},
+    "headers": {},
+    "parameters": {},
+    "requestBodies": {},
+    "responses": {},
+    "schemas": {
+		"Article": {
+			"type": "object",
+			"properties": {
+			  "title": {
+				"type": "string",
+				"nullable": false,
+				"readOnly": true
+			  },
+			  "description": {
+				"type": "string",
+				"nullable": false,
+				"readOnly": true
+			  },
+			  "content": {
+				"type": "string",
+				"nullable": false,
+				"readOnly": true
+			  },
+			  "url": {
+				"type": "string",
+				"nullable": false,
+				"readOnly": true
+			  },
+			  "image": {
+				"type": "string",
+				"nullable": false,
+				"readOnly": true
+			  },
+			  "publishAt": {
+				"type": "string",
+				"nullable": false,
+				"readOnly": true
+			  },
+			  "sourceName": {
+				"type": "string",
+				"nullable": false,
+				"readOnly": true
+			  }
+			},
+			"additionalProperties": false
+		  }
+	},
+    "securitySchemes": {}
+  },
+  "info": {
+    "title": "topl_back_end_exercise",
+    "version": "1.0.0",
+    "license": {
+      "name": "ISC"
+    },
+    "contact": {
+      "name": "Santiago Taco"
+    }
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/articles/search": {
+		"parameters": [
+			{
+				"name": "keyword",
+				"in": "query",
+				"description": "This is the purpose of your search. Articles returned are filtered by the given keywords.",
+				"required": false,
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "max",
+				"in": "query",
+				"description": "Specify the number of Articles will be returned",
+				"required": false,
+				"type": "int",
+				"default": ""
+			}
+		],
+		"get": {
+			"tags": [
+				"Articles"
+			],
+			"summary": "Get articles by the parameter sent",
+			"parameters": [
+				{
+					"name": "keyword",
+					"in": "query",
+					"description": "This is the purpose of your search. Articles returned are filtered by the given keywords.",
+					"required": false,
+					"type": "string",
+					"default": ""
+				},
+				{
+					"name": "max",
+					"in": "query",
+					"description": "Specify the number of Articles will be returned",
+					"required": false,
+					"type": "string",
+					"default": ""
+				}
+			],
+			"responses": {
+				"200": {
+					"description": "Success",
+					"content": {
+						"text/plain": {
+						  "schema": {
+							"$ref": "#/components/schemas/Article"
+						  }
+						},
+						"application/json": {
+						  "schema": {
+							"$ref": "#/components/schemas/Article"
+						  }
+						},
+						"text/json": {
+						  "schema": {
+							"$ref": "#/components/schemas/Article"
+						  }
+						}
+					  }
+				},
+				"404": {
+					"description": "Failed Article not found",
+					"message": "Not found"
+				}
+			}
+		}
+	}
+  },
+  "servers": [
+    {
+      "url": "http://localhost:6060/"
+    }
+  ]
+}
