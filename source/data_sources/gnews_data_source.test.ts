@@ -1,5 +1,4 @@
 import axios from 'axios';
-//jest.mock("axios");
 import MockAdapter from "axios-mock-adapter";
 import { generateArticles, gNewsArticlesData } from '../../tests/utils/generate';
 import {getGNewsByKeyWord, GNEWS_URL} from './gnews_data_source';
@@ -14,6 +13,7 @@ describe("Get GNews articles", () => {
     afterEach(() => {
       mock.reset();
     });
+
     describe("when API call is successful", () => {
       it("should return Articles list", async () => {
         const gNewsarticles = gNewsArticlesData;
