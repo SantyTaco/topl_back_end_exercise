@@ -3,9 +3,10 @@ import { Request, Response } from "express";
 import { formatGNewsData } from "../utils/articles_utils";
 
 export const GNEWS_URL = "https://gnews.io/api/v4/search";
-const GNEWS_TOKEN = "8265e8fccc97f87784bdcc4b20b3a03a";
+const GNEWS_TOKEN = "efc7850a2beac4b7c5aec5af03544eed";
 
 export const getGNewsByKeyWord = async (keyWord: string, max: string, searchIn: string) => {
+  console.log('keyWord',keyWord);
   console.log('searchIn',searchIn);
   const result: AxiosResponse = await axios.get(
     `${GNEWS_URL}`,

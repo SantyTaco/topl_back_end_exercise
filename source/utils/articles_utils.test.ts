@@ -18,7 +18,6 @@ describe("Test Article utils", () => {
     it("should return an object", () => {
       const articles = generateArticles();
       const wordFrequency = getWordFrequencyInContent(articles);
-      console.log("wordFrequency", wordFrequency);
 
       expect(wordFrequency.vandaag).toEqual(1);
       expect(wordFrequency.cuador).toEqual(2);

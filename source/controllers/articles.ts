@@ -40,6 +40,7 @@ export default class ArticlesController {
 
       return this.sendSuccessResult(res, articles);
     } catch (e) {
+      console.log('Error', e);
       return this.sendErrorResult(res, KEYWORD_IS_REQUIRED_MESSAGE);
     }
   };
@@ -55,10 +56,11 @@ export default class ArticlesController {
   };
 
   validateInTitle = (res: Response, inTitle: string) => {
-    console.log('inTitle', inTitle);
-    let boolOutput = (inTitle.toLowerCase() === "true" || inTitle.toLowerCase() === "false")
-    if (!boolOutput) {
-      return this.sendErrorResult(res, SEARCH_IN_IS_NOT_BOOLEAN_MESSAGE);
+    if(inTitle) {
+      let boolOutput = (inTitle.toLowerCase() === "true" || inTitle.toLowerCase() === "false")
+      if (!boolOutput) {
+        return this.sendErrorResult(res, SEARCH_IN_IS_NOT_BOOLEAN_MESSAGE);
+      }
     }
   };
 
