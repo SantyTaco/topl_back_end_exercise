@@ -33,7 +33,7 @@ The API achieve these requiments:
 ```
 npm install
 ```
-### Run the server
+### Running the server
 
 ```
 npm run dev
@@ -49,7 +49,7 @@ http://localhost:6070/articles/search
  * max: Specify the number of articles that will be returned
  * inTitle: It accepts true or false, and it enables searching by title
  
-In Swagger http://localhost:6060/docs/#/ there is the information of this API.
+In Swagger http://localhost:6070/docs/#/ there is the information of this API.
 
 ## Testing
 
