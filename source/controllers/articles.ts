@@ -24,8 +24,9 @@ export default class ArticlesController {
       const inTitle = req.query?.inTitle || false;
 
       this.validateInTitle(res, inTitle as string);
-      const searchIn = req.query?.inTitle === 'true' ? "title" : "title,description";
-      
+      const searchIn =
+        req.query?.inTitle === "true" ? "title" : "title,description";
+
       this.validateMaxNumber(res, max as string);
       articles = await cache.getItem<Articles>(keyword as string);
       this.verifyCache(articles, max as string, searchIn, res);
@@ -55,8 +56,9 @@ export default class ArticlesController {
   };
 
   validateInTitle = (res: Response, inTitle: string) => {
-    if(inTitle) {
-      let boolOutput = (inTitle.toLowerCase() === "true" || inTitle.toLowerCase() === "false")
+    if (inTitle) {
+      let boolOutput =
+        inTitle.toLowerCase() === "true" || inTitle.toLowerCase() === "false";
       if (!boolOutput) {
         return this.sendErrorResult(res, SEARCH_IN_IS_NOT_BOOLEAN_MESSAGE);
       }
@@ -73,10 +75,22 @@ export default class ArticlesController {
     return res.status(200).json(articles);
   };
 
-  private verifyCache(articles: Articles | undefined, max: string, searchIn: string, res: Response<any, Record<string, any>>) {
-    if (articles &&
-      articles.totalArticles == parseInt(max as string) &&
-      articles.searchIn == searchIn)
-      this.sendSuccessResult(res, articles);
+  private verifyCache(
+    articles: Articles | undefined,
+    max: string,
+    searchIn: string,
+    res: Response<any, Record<string, any>>
+  ) {
+    try{
+      if (
+        articles &&
+        articles.totalArticles == parseInt(max as string) &&
+        articles.searchIn == searchIn
+      ) {
+        this.sendSuccessResult(res, articles);
+      }
+    } catch(e) {
+      console.log(e);
+    }
   }
 }

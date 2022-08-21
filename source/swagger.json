@@ -105,7 +105,7 @@
         {
           "name": "keyword",
           "in": "query",
-          "description": "This is the purpose of your search and it is required. Articles returned are filtered by the given keyword.",
+          "description": "This is the purpose of your search and it is required. Articles returned are filtered by the given keyword",
           "required": true,
           "type": "string",
           "default": ""
@@ -113,7 +113,7 @@
         {
           "name": "max",
           "in": "query",
-          "description": "Specify the number of Articles will be returned",
+          "description": "Specify the number of articles that will be returned",
           "required": false,
           "type": "int",
           "default": ""
@@ -121,7 +121,7 @@
         {
           "name": "inTitle",
           "in": "query",
-          "description": "It accepts true or false, and it enable the searching by title",
+          "description": "It accepts true or false, and it enables searching by title",
           "required": false,
           "type": "boolean",
           "default": "false"
@@ -134,7 +134,7 @@
           {
             "name": "keyword",
             "in": "query",
-            "description": "This is the purpose of your search. Articles returned are filtered by the given keywords.",
+            "description": "This is the purpose of your search. Articles returned are filtered by the given keywords",
             "required": true,
             "type": "string",
             "default": ""
@@ -142,10 +142,18 @@
           {
             "name": "max",
             "in": "query",
-            "description": "Specify the number of Articles will be returned",
+            "description": "Specify the number of articles that will be returned",
             "required": false,
             "type": "string",
             "default": ""
+          },
+          {
+            "name": "inTitle",
+            "in": "query",
+            "description": "It accepts true or false, and it enables searching by title",
+            "required": false,
+            "type": "boolean",
+            "default": "false"
           }
         ],
         "responses": {
