@@ -1,6 +1,6 @@
 import { Article, Articles } from "../model";
 
-export function formatGNewsData(gNewsArticles : any[], max: string) {
+export function formatGNewsData(gNewsArticles : any[], max: string, searchIn: string) {
     const articleList = gNewsArticles?.map((article: any) => {
         return new Article(
             article.title,
@@ -13,7 +13,7 @@ export function formatGNewsData(gNewsArticles : any[], max: string) {
         );
     });
 
-    const articles = new Articles(parseInt(max), 0, articleList);
+    const articles = new Articles(parseInt(max), 0, articleList, searchIn);
     return articles;
 }
 

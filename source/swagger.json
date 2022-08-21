@@ -110,7 +110,6 @@
           "type": "string",
           "default": ""
         },
-
         {
           "name": "max",
           "in": "query",
@@ -118,6 +117,14 @@
           "required": false,
           "type": "int",
           "default": ""
+        },
+        {
+          "name": "inTitle",
+          "in": "query",
+          "description": "It accepts true or false, and it enable the searching by title",
+          "required": false,
+          "type": "boolean",
+          "default": "false"
         }
       ],
       "get": {

@@ -20,7 +20,7 @@ describe("Get GNews articles", () => {
         const articles = generateArticles();
         mock.onGet(`${GNEWS_URL}`).reply(200, gNewsarticles);
 
-        const result = await getGNewsByKeyWord('test', '3');
+        const result = await getGNewsByKeyWord('test', '3','title');
 
         expect(mock.history.get[0].url).toEqual(`${GNEWS_URL}`);
         expect(result).toEqual(articles);

@@ -2,7 +2,7 @@ import { Article, Articles } from "../../source/model";
 import { formatGNewsData } from "../../source/utils/articles_utils";
 
 export function generateArticles() {
-  const articles = formatGNewsData(gNewsArticlesData.articles, "3");
+  const articles = formatGNewsData(gNewsArticlesData.articles, "3", "title");
 
   return articles;
 }
