@@ -4,13 +4,14 @@ Create an API to consume an external News API
 
 ## Description
 
-This project build a REST API with Express, Node, TypeScript 
-The API achieve these requiments:
+This project built a REST API with Express, Node, TypeScript. 
+The API achieved these requiments:
+
 1. Fetching N news articles 
 2. Searching by keywords
 3. Searching by title keyword
-4. Cache the data.
-5. It is using Swagger for documentation
+4. Caching the data
+5. It uses Swagger for documentation
 
 ## Getting Started
 
@@ -39,12 +40,13 @@ npm install
 npm run dev
 ```
 
-Once the server is runing you can use Postman or Swagger to test the API.
+Once the server is running, the API can be used in Postman or Swagger to test the API.
 The endpoint URL is: 
 
 http://localhost:6070/articles/search
 
- Query Params:
+ Query Parameters:
+ 
  * keyword*: This is the purpose of your search. Articles returned are filtered by the given keywords
  * max: Specify the number of articles that will be returned
  * inTitle: It accepts true or false, and it enables searching by title
