@@ -40,7 +40,6 @@ export default class ArticlesController {
 
       return this.sendSuccessResult(res, articles);
     } catch (e) {
-      console.log('Error', e);
       return this.sendErrorResult(res, KEYWORD_IS_REQUIRED_MESSAGE);
     }
   };
