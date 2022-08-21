@@ -1,6 +1,5 @@
 import axios, { AxiosResponse } from "axios";
 import { Request, Response } from "express";
-import { Article, Articles } from "../model";
 import { formatGNewsData } from "../utils/articles_utils";
 
 export const GNEWS_URL = "https://gnews.io/api/v4/search";
